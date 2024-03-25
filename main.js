@@ -80,6 +80,19 @@ posts.forEach((post) => {
     myContainer.innerHTML += newPost;
 });
 
+//Seleziono tutti i miei bottoni e i miei counter
+const likeBtns = document.querySelectorAll('.js-like-button');
+const likeCounters = document.querySelectorAll('.js-likes-counter');
+
+likeBtns.forEach((btn, index) => {
+    btn.addEventListener('click', function () {
+        event.preventDefault();
+        btn.classList.add('like-button--liked');
+        const counter = likeCounters[index];
+        parseInt(counter.textContent++);
+    });
+});
+
 /**********************
         FUCTIONS 
 **********************/
